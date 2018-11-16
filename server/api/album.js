@@ -5,20 +5,20 @@ const {db, Album, Artist, Song} = require('../db');
 
 router.get('/', async (req, res, next) => {
   try {
-    const allAlbums = await Album.findAll({include: [{all: true}]});
+    const allAlbums = await Album.findAll({include: [Artist]});
     res.json(allAlbums);
   } catch(err) {
       next(err);
   }
 });
 
-// router.get('/api/albums/:albumid', async (req, res, next) => {
-//   try {
+router.get('/:albumid', async (req, res, next) => {
+  try {
 
-//   } catch (err) {
-//       next(err);
-//   }
-// });
+  } catch (err) {
+      next(err);
+  }
+});
 
 
 module.exports = router;
