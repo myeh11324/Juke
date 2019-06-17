@@ -13,6 +13,7 @@ export default class Main extends React.Component {
       selectedAlbum: {}
     }
     this.pickAlbum = this.pickAlbum.bind(this)
+    this.deselectAlbum = this.deselectAlbum.bind(this)
   }
 
   async componentDidMount() {
@@ -29,10 +30,15 @@ export default class Main extends React.Component {
     }
   }
 
+deselectAlbum() {
+  //to switch back to all albums view
+  this.setState({ selectedAlbum: {} })
+}
+
   render () {
     return (
       <div id='main'>
-        <Sidebar />
+        <Sidebar deselectAlbum={this.deselectAlbum}/>
         <Player />
         <div className='container'>
         {

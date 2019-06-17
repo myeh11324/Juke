@@ -2,8 +2,9 @@
 import React from 'react'
 
 const Sidebar = (props) => {
+    const deselect = props.deselectAlbum
     return (
-        <div id='sidebar'>
+        <div id='sidebar' onClick={deselect}>
             <img src='juke.svg' id='logo' />
             <section>
                 <h4>
