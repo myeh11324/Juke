@@ -2,25 +2,32 @@
 import React from 'react'
 
 const Songs = (props) => {
+    const songs = props.songs
     return (
     <table id='songs'>
-            <tbody>
-            <tr class='gray'>
+        <tbody>
+            <tr className='gray'>
                 <td />
                 <td>#</td>
                 <td>Name</td>
                 <td>Artist</td>
                 <td>Genre</td>
             </tr>
-            <tr>
-                <td><i class='fa fa-play-circle' /></td>
-                <td>1</td>
-                <td>Song Name</td>
-                <td>Artist Name</td>
-                <td>Song Genre</td>
-            </tr>
-            </tbody>
-        </table>
+            {
+                songs.map(song => {
+                    return ( 
+                        <tr key={song.id}>
+                            <td><i className='fa fa-play-circle' /></td>
+                            <td>{song.id}</td>
+                            <td>{song.name}</td>
+                            <td>{song.artist}</td>
+                            <td>{song.genre}</td>
+                        </tr>
+                    )
+                })
+            }
+        </tbody>
+    </table>
     )
 }
 

@@ -1,6 +1,9 @@
 
 import React from 'react'
 
+//AllAlbums renders this component. We don't want the songs of each album to show in 
+//the all albums view, so I separated into SingleAlbum and Album components. SingleAlbum
+//represents the single album view, which will render both the Album and Songs components 
 const Album = (props) => {
     const pickAlbum = props.pickAlbum
     const album = props.album
@@ -18,22 +21,4 @@ const Album = (props) => {
 }
 
 export default Album
-
-{/* <table id='songs'>
-              <tbody>
-                <tr className='gray'>
-                  <td />
-                  <td>#</td>
-                  <td>Name</td>
-                  <td>Artist</td>
-                  <td>Genre</td>
-                </tr>
-                <tr>
-                  <td><i className='fa fa-play-circle' /></td>
-                  <td>1</td>
-                  <td>Song Name</td>
-                  <td>Artist Name</td>
-                  <td>Song Genre</td>
-                </tr>
-              </tbody>
-            </table> */}
+    
