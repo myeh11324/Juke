@@ -1,6 +1,6 @@
 
 import React from 'react'
-import SingleAlbum from './SingleAlbum'
+import Album from './Album'
 
 const AllAlbums = (props) => {
     const albums = props.albums
@@ -11,7 +11,7 @@ const AllAlbums = (props) => {
                 {
                     albums.map(album => {
                         return (
-                            <SingleAlbum album={album} key={album.id} pickAlbum={pickAlbum}/>
+                            <Album album={album} key={album.id} pickAlbum={pickAlbum}/>
                         )
                     })
                 }
